@@ -1,0 +1,232 @@
+# edited Deniraa
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/libexec/i3blocks/$BLOCK_NAME
+separator_block_width=15
+color=#F3F4F5
+markup=none
+
+[volume-pulseaudio]
+command=~/.local/bin/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio -F 3 -f 3 -a -C '#F3F4F5' -m pulse -s Master
+interval=1
+signal=10
+
+[memory]
+label=
+instance=mem;free
+separator=false
+interval=30
+#command=/usr/lib/i3blocks/memory
+color=#008592
+
+[cpu_usage]
+label=
+#command=/usr/lib/i3blocks/cpu_usage
+interval=10
+#min_width=CPU:100.00%
+separator=true
+color=#468459
+
+[disk-home]
+label=
+command=df -h -P -l $HOME | awk '/\/.*/ { print $3; exit 0 }'
+interval=30
+color=#d96468
+
+[iface]
+label=
+instance=enp1s0
+color=#5879AF
+interval=10
+separator=true
+color=#adff00
+
+
+[bandwidth]
+label=
+instance=enp1s0
+interval=1
+#color=#9C6594
+color=#9a64d9
+
+#[microphone]
+#label=
+#interval=5
+
+#[network]
+#label=
+#command=~/code/shell/i3-blocks/blocks
+#instance=enp1s0
+#interval=10
+
+#[network]
+#label=
+#instance=enp1s0
+#interval=10
+
+[packages]
+label=
+interval=300
+
+#[playerctl]
+#label=
+#instance=rhythmbox
+#interval=5
+
+#[vpn]
+#label=
+#interval=5
+
+#[weather]
+#instance=2910831
+#interval=60
+
+#[webcam]
+#label=
+#interval=5
+
+#[process]
+#instance=http
+#label=
+#interval=10
+
+#[space]
+#label=
+#interval=30
+
+#[space]
+#label=
+#instance=/pub
+#interval=30
+
+# Part 9
+
+#[ssid]
+#label=
+#interval=60
+
+#[temperature]
+#instance=Core
+#label=
+#interval=5
+
+#[user]
+#label=
+#interval=once
+
+#[usb]
+#instance=PhotoSmart
+#label=
+#interval=10
+
+#[trash]
+#label=
+#interval=10
+
+#[battery]
+#label=
+#instance=0
+#interval=5
+
+#[bluetooth]
+#label=
+#interval=10
+
+#[brightness]
+#label=
+#interval=5
+
+#[countdown]
+#instance=tomorrow 05:00:00
+#label=
+#interval=1
+
+#[cmus]
+#command=~/.i3-blocks/blocks/scroll $BLOCK_NAME
+#label=
+#markup=pango
+#interval=repeat
+
+#[display]
+#label=
+#interval=5
+
+#[keystate]
+#label=
+#instance=caps
+#interval=1
+
+#[keystate]
+#label=
+#instance=num
+#interval=1
+
+#[launcher]
+#label=
+#interval=once
+
+[load]
+label=
+interval=10
+
+#[feed]
+#instance=http://goo.gl/bR2hcp
+#label=
+#interval=60
+
+#[firewall]
+#label=
+#interval=10
+
+#[ip-address]
+#label=
+#interval=60
+
+#[window]
+#command=~/.i3-blocks/blocks/scroll $BLOCK_NAME
+#label=
+#markup=pango
+#interval=repeat
+
+[keymap]
+label=
+interval=10
+
+#[locale]
+#label=
+#interval=once
+
+#[mail]
+#label=
+#instance=~/.gmx-private
+#interval=60
+
+[time]
+label=
+command=date '+%a, %d %b %H:%M'
+interval=5
+

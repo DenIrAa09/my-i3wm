@@ -1,0 +1,138 @@
+!---Xterm config----
+!==========================================
+xterm.termName: xterm-256color
+xterm.locale:true
+xterm.utf8: true
+xterm*utf8Title:true
+xterm*fontMenu*fontdefault*Label:Default
+
+!xterm*faceName:DejaVu Sans Mono:style=Book:antialias=false
+!xterm*faceNameDoublesize:WenQuanYi Micro Hei Mono:pixelsize=8:antialias=true
+
+xterm*xftAntialias:true
+
+!true, CJK text column width of 2
+xterm*cjkWidth:true
+
+!color
+xterm*background: #080707
+xterm*foreground: #AFCAD3
+
+!xterm*color0: #000000
+!xterm*color1: #CC0000
+!xterm*color2: #4E9A06
+!xterm*color3: #C4A000
+!xterm*color4: #3465A4
+!xterm*color5: #75507B
+!xterm*color6: #06989A
+!xterm*color7: #D3D7CF
+
+!xterm*color8: #555753
+!xterm*color9: #EF2929
+!xterm*color10: #8AE234
+!xterm*color11: #FCE94F
+!xterm*color12: #729FCF
+!xterm*color13: #AD7FA8
+!xterm*color14: #34E2E2
+!xterm*color15: #EEEEEC
+ 
+!fix alt key for keyboard shortcuts
+!xterm*altSendsEscape:true
+
+!Scrolling, Shift+PageUp/Shift+PageDown, or the scrollbar
+xterm*saveLines: 4096
+
+!main windows size
+xterm*VT100.geometry: 78x20
+
+!mouse selection to copy, Ctrl-V, also Shift+Insert
+xterm*VT100.Translations: #override \
+	<Btn1Up>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+        Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0)
+
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+
+!Xft.dpi:                    96
+!Xft.antialias:              false
+!Xft.rgba:                   rgb
+!Xft.hinting:                true
+!Xft.hintstyle:              hintslight
+
+URxvt.depth:                32
+URxvt.geometry:             78x20
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            1000
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+! Using XLFD (created via e.g. xfontsel)
+URxvt*font:           -misc-fixed-medium-r-semicondensed-*-12-90-100-*-c-60-iso8859-1
+! Using Xft
+!URxvt*font:           xft:Inconsolata:size=9
+
+! Fix font space
+!URxvt*letterSpace: 1
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! The string will be interpreted as if typed into the shell as-is.
+! In this example, printing will be disabled altogether.
+URxvt.print-pipe: "cat > /dev/null"
+
+!-*- Perl extensions -*-
+URxvt.perl-ext-common: default,selection-to-clipboard,matcher,keyboard-select
+URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:   /usr/bin/firefox
+URxvt.underlineURLs:  True
+URxvt.matcher.button: 1 
+URxvt.keysym.M-Escape:perl:keyboard-select:activate
+URxvt.keysym.Control-Shift-V:     perl:pasta:paste
+URxvt.clipboard.autocopy: true
+
+! Cursor
+URxvt.cursorBlink:          false
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         false
+
+!---------------------
+! i3 wm colors
+!---------------------
+
+urxvt*background:       #3C3B37
+urxvt*foreground:       #93a1a1
+
+!black
+*color0:  #5F5F5F
+*color8:  #828282
+!red
+*color1:  #d96468
+*color9:  #d98f93
+!green
+*color2:  #a2d964
+*color10: #b8d98f
+!yellow
+*color3:  #d9c964
+*color11: #d9cf8f
+!blue 
+*color4:  #64a2d9
+*color12: #8f99d9
+!magenta
+*color5:  #9a64d9
+*color13: #b08fd9
+!cyan
+*color6:  #008592
+*color14: #8fd9d5
+!white
+*color7:  #989898
+*color15: #C5C5C5
